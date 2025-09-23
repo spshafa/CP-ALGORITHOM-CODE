@@ -1,0 +1,39 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+#define int long long 
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define sp " "
+#define endl "\n"
+#define pn(a) cout<<a<<"\n"
+#define fo(x,n) for(int i=x; i<n; i++)
+#define w(t) while(t--)
+#define el cout<<endl;
+#define r0 return; 
+const int  MOD=10e9+7;
+const int N=10e6+6;
+bool prime[N];
+
+void sieve() {
+    prime[0] = prime[1] = 1; // 0 and 1 are not prime
+    for (int i = 2; i * i < N; i++) {
+        if (prime[i]) continue; // already marked composite
+        for (int j = i * i; j < N; j += i) {
+            prime[j] = 1; // mark composite
+
+            // *if index prime[i]==1 not primeand index prime[i]==0 prime*//
+        }
+    }
+}
+signed main ()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+     sieve();
+     //run main function, to only 1 run.//
+   
+    return 0;
+}
