@@ -1,0 +1,21 @@
+const int  MOD=10e9+7;
+const int N=10e6+6;
+int pow(int a,int n)
+{
+    int res=1;
+    while(n)
+    {
+        if(n&1)res=(a*res)%MOD; 
+        a=(a*a)%MOD;
+        n>>=1;
+    }
+
+    return res;
+}
+int power(int a,int n)
+{
+    if(n==0)return 1;
+    if(n==1)return a;
+    int res=power(a,n/2);
+    return ( ( (res*res)%MOD)*power(a,n%2))%MOD;
+}
